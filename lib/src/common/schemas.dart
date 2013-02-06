@@ -1,5 +1,6 @@
 part of compute_v1beta13_api_client;
 
+/** An access configuration attached to an instance's network interface. */
 class AccessConfig {
 
   /** Type of the resource. */
@@ -55,6 +56,7 @@ class AccessConfig {
 
 }
 
+/** An instance-attached disk resource. */
 class AttachedDisk {
 
   /** Persistent disk only; If true, delete the disk and all its data when the associated instance is deleted. This property defaults to false if not specified. */
@@ -137,6 +139,7 @@ class AttachedDisk {
 
 }
 
+/** A persistent disk resource. */
 class Disk {
 
   /** Creation timestamp in RFC3339 text format (output only). */
@@ -264,6 +267,7 @@ class Disk {
 
 }
 
+/** Contains a list of persistent disk resources. */
 class DiskList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -334,6 +338,7 @@ class DiskList {
 
 }
 
+/** A firewall resource. */
 class Firewall {
 
   /** The list of rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection. */
@@ -520,6 +525,7 @@ Example inputs include: ["22"], ["80,"443"] and ["12345-12349"]. */
 
 }
 
+/** Contains a list of firewall resources. */
 class FirewallList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -590,6 +596,7 @@ class FirewallList {
 
 }
 
+/** A disk image resource. */
 class Image {
 
   /** Creation timestamp in RFC3339 text format (output only). */
@@ -775,6 +782,7 @@ class ImageDiskSnapshot {
 
 }
 
+/** Contains a list of disk image resources. */
 class ImageList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -845,6 +853,7 @@ class ImageList {
 
 }
 
+/** An instance resource. */
 class Instance {
 
   /** Creation timestamp in RFC3339 text format (output only). */
@@ -1032,6 +1041,7 @@ class Instance {
 
 }
 
+/** Contains a list of instance resources. */
 class InstanceList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -1102,6 +1112,7 @@ class InstanceList {
 
 }
 
+/** A kernel resource. */
 class Kernel {
 
   /** Creation timestamp in RFC3339 text format (output only). */
@@ -1175,6 +1186,7 @@ class Kernel {
 
 }
 
+/** Contains a list of kernel resources. */
 class KernelList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -1245,6 +1257,7 @@ class KernelList {
 
 }
 
+/** A machine type resource. */
 class MachineType {
 
   /** The zones that this machine type can run in. */
@@ -1421,6 +1434,7 @@ class MachineTypeEphemeralDisks {
 
 }
 
+/** Contains a list of machine type resources. */
 class MachineTypeList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -1491,6 +1505,7 @@ class MachineTypeList {
 
 }
 
+/** A metadata key/value entry. */
 class Metadata {
 
   /** Array of key/value pairs. The total size of all keys and values must be less than 512 KB. */
@@ -1571,6 +1586,7 @@ class MetadataItems {
 
 }
 
+/** A network resource. */
 class Network {
 
   /** Required; The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created. */
@@ -1662,6 +1678,7 @@ class Network {
 
 }
 
+/** A network interface resource attached to an instance. */
 class NetworkInterface {
 
   /** Array of configurations for this interface. This specifies how this interface is configured to interact with other network services, such as connecting to the internet. Currently, ONE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs specified, then this instance will have no external internet access. */
@@ -1732,6 +1749,7 @@ class NetworkInterface {
 
 }
 
+/** Contains a list of network resources. */
 class NetworkList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -1802,6 +1820,7 @@ class NetworkList {
 
 }
 
+/** An operation resource, used to manage asynchronous API requests. */
 class Operation {
 
   /** An optional identifier specified by the client when the mutation was initiated. Must be unique for all operation resources in the project (output only). */
@@ -2073,6 +2092,7 @@ class OperationErrorErrors {
 
 }
 
+/** Contains a list of operation resources. */
 class OperationList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -2143,6 +2163,7 @@ class OperationList {
 
 }
 
+/** A project resource. Projects can be created only in the APIs Console. Unless marked otherwise, values can only be modified in the console. */
 class Project {
 
   /** Metadata key/value pairs available to all instances contained in this project. */
@@ -2348,6 +2369,7 @@ class SerialPortOutput {
 
 }
 
+/** A service account. */
 class ServiceAccount {
 
   /** Email address of the service account. */
@@ -2400,6 +2422,7 @@ class ServiceAccount {
 
 }
 
+/** A persistent disk snapshot resource. */
 class Snapshot {
 
   /** Creation timestamp in RFC3339 text format (output only). */
@@ -2509,6 +2532,7 @@ class Snapshot {
 
 }
 
+/** Contains a list of persistent disk snapshot resources. */
 class SnapshotList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
@@ -2579,6 +2603,7 @@ class SnapshotList {
 
 }
 
+/** A zone resource. */
 class Zone {
 
   /** The machine types that can be used in this zone (output only). */
@@ -2746,6 +2771,7 @@ class ZoneMaintenanceWindows {
 
 }
 
+/** Contains a list of zone resources. */
 class ZoneList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
