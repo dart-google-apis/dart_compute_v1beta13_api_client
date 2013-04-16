@@ -4,19 +4,19 @@ part of compute_v1beta13_api_client;
 class AccessConfig {
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of this access configuration. */
-  String name;
+  core.String name;
 
   /** An external IP address associated with this instance. Specify an unused static IP address available to the project. If not specified, the external IP will be drawn from a shared ephemeral pool. */
-  String natIP;
+  core.String natIP;
 
   /** Type of configuration. Must be set to "ONE_TO_ONE_NAT". This configures port-for-port NAT to the internet. */
-  String type;
+  core.String type;
 
   /** Create new AccessConfig from JSON data */
-  AccessConfig.fromJson(Map json) {
+  AccessConfig.fromJson(core.Map json) {
     if (json.containsKey("kind")) {
       kind = json["kind"];
     }
@@ -32,8 +32,8 @@ class AccessConfig {
   }
 
   /** Create JSON Object for AccessConfig */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (kind != null) {
       output["kind"] = kind;
@@ -52,7 +52,7 @@ class AccessConfig {
   }
 
   /** Return String representation of AccessConfig */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -60,28 +60,28 @@ class AccessConfig {
 class AttachedDisk {
 
   /** Persistent disk only; If true, delete the disk and all its data when the associated instance is deleted. This property defaults to false if not specified. */
-  bool deleteOnTerminate;
+  core.bool deleteOnTerminate;
 
   /** Persistent disk only; must be unique within the instance when specified. This represents a unique device name that is reflected into the /dev/ tree of a Linux operating system running within the instance. If not specified, a default will be chosen by the system. */
-  String deviceName;
+  core.String deviceName;
 
   /** A zero-based index to assign to this disk, where 0 is reserved for the boot disk. If not specified, the server will choose an appropriate value. */
-  int index;
+  core.int index;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** The mode in which to attach this disk, either "READ_WRITE" or "READ_ONLY". */
-  String mode;
+  core.String mode;
 
   /** Persistent disk only; the URL of the persistent disk resource. */
-  String source;
+  core.String source;
 
   /** Type of the disk, either "EPHEMERAL" or "PERSISTENT". Note that persistent disks must be created before you can specify them here. */
-  String type;
+  core.String type;
 
   /** Create new AttachedDisk from JSON data */
-  AttachedDisk.fromJson(Map json) {
+  AttachedDisk.fromJson(core.Map json) {
     if (json.containsKey("deleteOnTerminate")) {
       deleteOnTerminate = json["deleteOnTerminate"];
     }
@@ -106,8 +106,8 @@ class AttachedDisk {
   }
 
   /** Create JSON Object for AttachedDisk */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (deleteOnTerminate != null) {
       output["deleteOnTerminate"] = deleteOnTerminate;
@@ -135,7 +135,7 @@ class AttachedDisk {
   }
 
   /** Return String representation of AttachedDisk */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -143,43 +143,43 @@ class AttachedDisk {
 class Disk {
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource; provided by the client when the resource is created. */
-  String description;
+  core.String description;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. */
-  String name;
+  core.String name;
 
   /** Internal use only. */
-  String options;
+  core.String options;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Size of the persistent disk, specified in GB. */
-  String sizeGb;
+  core.String sizeGb;
 
   /** The source snapshot used to create this disk. Once the source snapshot has been deleted from the system, this field will be cleared, and will not be set even if a snapshot with the same name has been re-created. */
-  String sourceSnapshot;
+  core.String sourceSnapshot;
 
   /** The 'id' value of the snapshot used to create this disk. This value may be used to determine whether the disk was created from the current or a previous instance of a given disk snapshot. */
-  String sourceSnapshotId;
+  core.String sourceSnapshotId;
 
   /** The status of disk creation (output only). */
-  String status;
+  core.String status;
 
   /** URL for the zone where the persistent disk resides; provided by the client when the disk is created. A persistent disk must reside in the same zone as the instance to which it is attached. */
-  String zone;
+  core.String zone;
 
   /** Create new Disk from JSON data */
-  Disk.fromJson(Map json) {
+  Disk.fromJson(core.Map json) {
     if (json.containsKey("creationTimestamp")) {
       creationTimestamp = json["creationTimestamp"];
     }
@@ -219,8 +219,8 @@ class Disk {
   }
 
   /** Create JSON Object for Disk */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (creationTimestamp != null) {
       output["creationTimestamp"] = creationTimestamp;
@@ -263,7 +263,7 @@ class Disk {
   }
 
   /** Return String representation of Disk */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -271,22 +271,22 @@ class Disk {
 class DiskList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The persistent disk resources. */
-  List<Disk> items;
+  core.List<Disk> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new DiskList from JSON data */
-  DiskList.fromJson(Map json) {
+  DiskList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -308,14 +308,14 @@ class DiskList {
   }
 
   /** Create JSON Object for DiskList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -334,7 +334,7 @@ class DiskList {
   }
 
   /** Return String representation of DiskList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -342,40 +342,40 @@ class DiskList {
 class Firewall {
 
   /** The list of rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection. */
-  List<FirewallAllowed> allowed;
+  core.List<FirewallAllowed> allowed;
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource; provided by the client when the resource is created. */
-  String description;
+  core.String description;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. */
-  String name;
+  core.String name;
 
   /** URL of the network to which this firewall is applied; provided by the client when the firewall is created. */
-  String network;
+  core.String network;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** A list of IP address blocks expressed in CIDR format which this rule applies to. One or both of sourceRanges and sourceTags may be set; an inbound connection is allowed if either the range or the tag of the source matches. */
-  List<String> sourceRanges;
+  core.List<core.String> sourceRanges;
 
   /** A list of instance tags which this rule applies to. One or both of sourceRanges and sourceTags may be set; an inbound connection is allowed if either the range or the tag of the source matches. */
-  List<String> sourceTags;
+  core.List<core.String> sourceTags;
 
   /** A list of instance tags indicating sets of instances located on network which may make network connections as specified in allowed. If no targetTags are specified, the firewall rule applies to all instances on the specified network. */
-  List<String> targetTags;
+  core.List<core.String> targetTags;
 
   /** Create new Firewall from JSON data */
-  Firewall.fromJson(Map json) {
+  Firewall.fromJson(core.Map json) {
     if (json.containsKey("allowed")) {
       allowed = [];
       json["allowed"].forEach((item) {
@@ -424,11 +424,11 @@ class Firewall {
   }
 
   /** Create JSON Object for Firewall */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (allowed != null) {
-      output["allowed"] = new List();
+      output["allowed"] = new core.List();
       allowed.forEach((item) {
         output["allowed"].add(item.toJson());
       });
@@ -455,19 +455,19 @@ class Firewall {
       output["selfLink"] = selfLink;
     }
     if (sourceRanges != null) {
-      output["sourceRanges"] = new List();
+      output["sourceRanges"] = new core.List();
       sourceRanges.forEach((item) {
         output["sourceRanges"].add(item);
       });
     }
     if (sourceTags != null) {
-      output["sourceTags"] = new List();
+      output["sourceTags"] = new core.List();
       sourceTags.forEach((item) {
         output["sourceTags"].add(item);
       });
     }
     if (targetTags != null) {
-      output["targetTags"] = new List();
+      output["targetTags"] = new core.List();
       targetTags.forEach((item) {
         output["targetTags"].add(item);
       });
@@ -477,21 +477,21 @@ class Firewall {
   }
 
   /** Return String representation of Firewall */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class FirewallAllowed {
 
   /** Required; this is the IP protocol that is allowed for this rule. This can either be a well known protocol string (tcp, udp or icmp) or the IP protocol number. */
-  String IPProtocol;
+  core.String IPProtocol;
 
   /** An optional list of ports which are allowed. It is an error to specify this for any protocol that isn't UDP or TCP. Each entry must be either an integer or a range. If not specified, connections through any port are allowed.
 Example inputs include: ["22"], ["80,"443"] and ["12345-12349"]. */
-  List<String> ports;
+  core.List<core.String> ports;
 
   /** Create new FirewallAllowed from JSON data */
-  FirewallAllowed.fromJson(Map json) {
+  FirewallAllowed.fromJson(core.Map json) {
     if (json.containsKey("IPProtocol")) {
       IPProtocol = json["IPProtocol"];
     }
@@ -504,14 +504,14 @@ Example inputs include: ["22"], ["80,"443"] and ["12345-12349"]. */
   }
 
   /** Create JSON Object for FirewallAllowed */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (IPProtocol != null) {
       output["IPProtocol"] = IPProtocol;
     }
     if (ports != null) {
-      output["ports"] = new List();
+      output["ports"] = new core.List();
       ports.forEach((item) {
         output["ports"].add(item);
       });
@@ -521,7 +521,7 @@ Example inputs include: ["22"], ["80,"443"] and ["12345-12349"]. */
   }
 
   /** Return String representation of FirewallAllowed */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -529,22 +529,22 @@ Example inputs include: ["22"], ["80,"443"] and ["12345-12349"]. */
 class FirewallList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The firewall resources. */
-  List<Firewall> items;
+  core.List<Firewall> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new FirewallList from JSON data */
-  FirewallList.fromJson(Map json) {
+  FirewallList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -566,14 +566,14 @@ class FirewallList {
   }
 
   /** Create JSON Object for FirewallList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -592,7 +592,7 @@ class FirewallList {
   }
 
   /** Return String representation of FirewallList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -600,37 +600,37 @@ class FirewallList {
 class Image {
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** Textual description of the resource; provided by the client when the resource is created. */
-  String description;
+  core.String description;
 
   /** Not yet implemented. */
   ImageDiskSnapshot diskSnapshot;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. */
-  String name;
+  core.String name;
 
   /** An optional URL of the preferred kernel for use with this disk image. If not specified, a server defined default kernel will be used. */
-  String preferredKernel;
+  core.String preferredKernel;
 
   /** The raw disk image parameters. */
   ImageRawDisk rawDisk;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Must be "RAW"; provided by the client when the disk image is created. */
-  String sourceType;
+  core.String sourceType;
 
   /** Create new Image from JSON data */
-  Image.fromJson(Map json) {
+  Image.fromJson(core.Map json) {
     if (json.containsKey("creationTimestamp")) {
       creationTimestamp = json["creationTimestamp"];
     }
@@ -664,8 +664,8 @@ class Image {
   }
 
   /** Create JSON Object for Image */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (creationTimestamp != null) {
       output["creationTimestamp"] = creationTimestamp;
@@ -702,7 +702,7 @@ class Image {
   }
 
   /** Return String representation of Image */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -710,16 +710,16 @@ class Image {
 class ImageRawDisk {
 
   /** The format used to encode and transmit the block device. Should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created. */
-  String containerType;
+  core.String containerType;
 
   /** An optional SHA1 checksum of the disk image before unpackaging; provided by the client when the disk image is created. */
-  String sha1Checksum;
+  core.String sha1Checksum;
 
   /** The full Google Cloud Storage URL where the disk image is stored; provided by the client when the disk image is created. */
-  String source;
+  core.String source;
 
   /** Create new ImageRawDisk from JSON data */
-  ImageRawDisk.fromJson(Map json) {
+  ImageRawDisk.fromJson(core.Map json) {
     if (json.containsKey("containerType")) {
       containerType = json["containerType"];
     }
@@ -732,8 +732,8 @@ class ImageRawDisk {
   }
 
   /** Create JSON Object for ImageRawDisk */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (containerType != null) {
       output["containerType"] = containerType;
@@ -749,7 +749,7 @@ class ImageRawDisk {
   }
 
   /** Return String representation of ImageRawDisk */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -757,18 +757,18 @@ class ImageRawDisk {
 class ImageDiskSnapshot {
 
   /** URL of the disk snapshot. */
-  String source;
+  core.String source;
 
   /** Create new ImageDiskSnapshot from JSON data */
-  ImageDiskSnapshot.fromJson(Map json) {
+  ImageDiskSnapshot.fromJson(core.Map json) {
     if (json.containsKey("source")) {
       source = json["source"];
     }
   }
 
   /** Create JSON Object for ImageDiskSnapshot */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (source != null) {
       output["source"] = source;
@@ -778,7 +778,7 @@ class ImageDiskSnapshot {
   }
 
   /** Return String representation of ImageDiskSnapshot */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -786,22 +786,22 @@ class ImageDiskSnapshot {
 class ImageList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The disk image resources. */
-  List<Image> items;
+  core.List<Image> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new ImageList from JSON data */
-  ImageList.fromJson(Map json) {
+  ImageList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -823,14 +823,14 @@ class ImageList {
   }
 
   /** Create JSON Object for ImageList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -849,7 +849,7 @@ class ImageList {
   }
 
   /** Return String representation of ImageList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -857,55 +857,55 @@ class ImageList {
 class Instance {
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource; provided by the client when the resource is created. */
-  String description;
+  core.String description;
 
   /** Array of disks associated with this instance. Persistent disks must be created before you can assign them. */
-  List<AttachedDisk> disks;
+  core.List<AttachedDisk> disks;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** An optional URL of the disk image resource to be to be installed on this instance; provided by the client when the instance is created. If not specified, the server will choose a default image. */
-  String image;
+  core.String image;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** URL of the machine type resource describing which machine type to use to host the instance; provided by the client when the instance is created. */
-  String machineType;
+  core.String machineType;
 
   /** Metadata key/value pairs assigned to this instance. Consists of custom metadata or predefined keys; see Instance documentation for more information. */
   Metadata metadata;
 
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. */
-  String name;
+  core.String name;
 
   /** Array of configurations for this interface. This specifies how this interface is configured to interact with other network services, such as connecting to the internet. Currently, ONE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs specified, then this instance will have no external internet access. */
-  List<NetworkInterface> networkInterfaces;
+  core.List<NetworkInterface> networkInterfaces;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** A list of service accounts each with specified scopes, for which access tokens are to be made available to the instance through metadata queries. */
-  List<ServiceAccount> serviceAccounts;
+  core.List<ServiceAccount> serviceAccounts;
 
   /** Instance status. One of the following values: "PROVISIONING", "STAGING", "RUNNING", "STOPPED", "TERMINATED", and "STOPPING" (output only). */
-  String status;
+  core.String status;
 
   /** An optional, human-readable explanation of the status (output only). */
-  String statusMessage;
+  core.String statusMessage;
 
   /** An optional set of tags applied to this instance. Used to identify valid sources or targets for network firewalls. Provided by the client when the instance is created. Each tag must be 1-63 characters long, and comply with RFC1035. */
-  List<String> tags;
+  core.List<core.String> tags;
 
   /** URL of the zone resource describing where this instance should be hosted; provided by the client when the instance is created. */
-  String zone;
+  core.String zone;
 
   /** Create new Instance from JSON data */
-  Instance.fromJson(Map json) {
+  Instance.fromJson(core.Map json) {
     if (json.containsKey("creationTimestamp")) {
       creationTimestamp = json["creationTimestamp"];
     }
@@ -969,8 +969,8 @@ class Instance {
   }
 
   /** Create JSON Object for Instance */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (creationTimestamp != null) {
       output["creationTimestamp"] = creationTimestamp;
@@ -979,7 +979,7 @@ class Instance {
       output["description"] = description;
     }
     if (disks != null) {
-      output["disks"] = new List();
+      output["disks"] = new core.List();
       disks.forEach((item) {
         output["disks"].add(item.toJson());
       });
@@ -1003,7 +1003,7 @@ class Instance {
       output["name"] = name;
     }
     if (networkInterfaces != null) {
-      output["networkInterfaces"] = new List();
+      output["networkInterfaces"] = new core.List();
       networkInterfaces.forEach((item) {
         output["networkInterfaces"].add(item.toJson());
       });
@@ -1012,7 +1012,7 @@ class Instance {
       output["selfLink"] = selfLink;
     }
     if (serviceAccounts != null) {
-      output["serviceAccounts"] = new List();
+      output["serviceAccounts"] = new core.List();
       serviceAccounts.forEach((item) {
         output["serviceAccounts"].add(item.toJson());
       });
@@ -1024,7 +1024,7 @@ class Instance {
       output["statusMessage"] = statusMessage;
     }
     if (tags != null) {
-      output["tags"] = new List();
+      output["tags"] = new core.List();
       tags.forEach((item) {
         output["tags"].add(item);
       });
@@ -1037,7 +1037,7 @@ class Instance {
   }
 
   /** Return String representation of Instance */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1045,22 +1045,22 @@ class Instance {
 class InstanceList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** A list of instance resources. */
-  List<Instance> items;
+  core.List<Instance> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new InstanceList from JSON data */
-  InstanceList.fromJson(Map json) {
+  InstanceList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -1082,14 +1082,14 @@ class InstanceList {
   }
 
   /** Create JSON Object for InstanceList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1108,7 +1108,7 @@ class InstanceList {
   }
 
   /** Return String representation of InstanceList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1116,25 +1116,25 @@ class InstanceList {
 class Kernel {
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource. */
-  String description;
+  core.String description;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource. */
-  String name;
+  core.String name;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new Kernel from JSON data */
-  Kernel.fromJson(Map json) {
+  Kernel.fromJson(core.Map json) {
     if (json.containsKey("creationTimestamp")) {
       creationTimestamp = json["creationTimestamp"];
     }
@@ -1156,8 +1156,8 @@ class Kernel {
   }
 
   /** Create JSON Object for Kernel */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (creationTimestamp != null) {
       output["creationTimestamp"] = creationTimestamp;
@@ -1182,7 +1182,7 @@ class Kernel {
   }
 
   /** Return String representation of Kernel */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1190,22 +1190,22 @@ class Kernel {
 class KernelList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The kernel resources. */
-  List<Kernel> items;
+  core.List<Kernel> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new KernelList from JSON data */
-  KernelList.fromJson(Map json) {
+  KernelList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -1227,14 +1227,14 @@ class KernelList {
   }
 
   /** Create JSON Object for KernelList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1253,7 +1253,7 @@ class KernelList {
   }
 
   /** Return String representation of KernelList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1261,46 +1261,46 @@ class KernelList {
 class MachineType {
 
   /** The zones that this machine type can run in. */
-  List<String> availableZone;
+  core.List<core.String> availableZone;
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource. */
-  String description;
+  core.String description;
 
   /** List of extended ephemeral disks assigned to the instance. */
-  List<MachineTypeEphemeralDisks> ephemeralDisks;
+  core.List<MachineTypeEphemeralDisks> ephemeralDisks;
 
   /** Count of CPUs exposed to the instance. */
-  int guestCpus;
+  core.int guestCpus;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Space allotted for the image, defined in GB. */
-  int imageSpaceGb;
+  core.int imageSpaceGb;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Maximum persistent disks allowed. */
-  int maximumPersistentDisks;
+  core.int maximumPersistentDisks;
 
   /** Maximum total persistent disks size (GB) allowed. */
-  String maximumPersistentDisksSizeGb;
+  core.String maximumPersistentDisksSizeGb;
 
   /** Physical memory assigned to the instance, defined in MB. */
-  int memoryMb;
+  core.int memoryMb;
 
   /** Name of the resource. */
-  String name;
+  core.String name;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new MachineType from JSON data */
-  MachineType.fromJson(Map json) {
+  MachineType.fromJson(core.Map json) {
     if (json.containsKey("availableZone")) {
       availableZone = [];
       json["availableZone"].forEach((item) {
@@ -1349,11 +1349,11 @@ class MachineType {
   }
 
   /** Create JSON Object for MachineType */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (availableZone != null) {
-      output["availableZone"] = new List();
+      output["availableZone"] = new core.List();
       availableZone.forEach((item) {
         output["availableZone"].add(item);
       });
@@ -1365,7 +1365,7 @@ class MachineType {
       output["description"] = description;
     }
     if (ephemeralDisks != null) {
-      output["ephemeralDisks"] = new List();
+      output["ephemeralDisks"] = new core.List();
       ephemeralDisks.forEach((item) {
         output["ephemeralDisks"].add(item.toJson());
       });
@@ -1402,25 +1402,25 @@ class MachineType {
   }
 
   /** Return String representation of MachineType */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class MachineTypeEphemeralDisks {
 
   /** Size of the ephemeral disk, defined in GB. */
-  int diskGb;
+  core.int diskGb;
 
   /** Create new MachineTypeEphemeralDisks from JSON data */
-  MachineTypeEphemeralDisks.fromJson(Map json) {
+  MachineTypeEphemeralDisks.fromJson(core.Map json) {
     if (json.containsKey("diskGb")) {
       diskGb = json["diskGb"];
     }
   }
 
   /** Create JSON Object for MachineTypeEphemeralDisks */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (diskGb != null) {
       output["diskGb"] = diskGb;
@@ -1430,7 +1430,7 @@ class MachineTypeEphemeralDisks {
   }
 
   /** Return String representation of MachineTypeEphemeralDisks */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1438,22 +1438,22 @@ class MachineTypeEphemeralDisks {
 class MachineTypeList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The machine type resources. */
-  List<MachineType> items;
+  core.List<MachineType> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new MachineTypeList from JSON data */
-  MachineTypeList.fromJson(Map json) {
+  MachineTypeList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -1475,14 +1475,14 @@ class MachineTypeList {
   }
 
   /** Create JSON Object for MachineTypeList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1501,7 +1501,7 @@ class MachineTypeList {
   }
 
   /** Return String representation of MachineTypeList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1509,13 +1509,13 @@ class MachineTypeList {
 class Metadata {
 
   /** Array of key/value pairs. The total size of all keys and values must be less than 512 KB. */
-  List<MetadataItems> items;
+  core.List<MetadataItems> items;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Create new Metadata from JSON data */
-  Metadata.fromJson(Map json) {
+  Metadata.fromJson(core.Map json) {
     if (json.containsKey("items")) {
       items = [];
       json["items"].forEach((item) {
@@ -1528,11 +1528,11 @@ class Metadata {
   }
 
   /** Create JSON Object for Metadata */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1545,20 +1545,20 @@ class Metadata {
   }
 
   /** Return String representation of Metadata */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class MetadataItems {
 
   /** Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be less than 128 bytes in length. This is reflected as part of a URL in the metadata server. Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project. */
-  String key;
+  core.String key;
 
   /** Value for the metadata entry. These are free-form strings, and only have meaning as interpreted by the image running in the instance. The only restriction placed on values is that their size must be less than or equal to 32768 bytes. */
-  String value;
+  core.String value;
 
   /** Create new MetadataItems from JSON data */
-  MetadataItems.fromJson(Map json) {
+  MetadataItems.fromJson(core.Map json) {
     if (json.containsKey("key")) {
       key = json["key"];
     }
@@ -1568,8 +1568,8 @@ class MetadataItems {
   }
 
   /** Create JSON Object for MetadataItems */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (key != null) {
       output["key"] = key;
@@ -1582,7 +1582,7 @@ class MetadataItems {
   }
 
   /** Return String representation of MetadataItems */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1590,31 +1590,31 @@ class MetadataItems {
 class Network {
 
   /** Required; The range of internal addresses that are legal on this network. This range is a CIDR specification, for example: 192.168.0.0/16. Provided by the client when the network is created. */
-  String IPv4Range;
+  core.String IPv4Range;
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource; provided by the client when the resource is created. */
-  String description;
+  core.String description;
 
   /** An optional address that is used for default routing to other networks. This must be within the range specified by IPv4Range, and is typically the first usable address in that range. If not specified, the default value is the first usable address in IPv4Range. */
-  String gatewayIPv4;
+  core.String gatewayIPv4;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. */
-  String name;
+  core.String name;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new Network from JSON data */
-  Network.fromJson(Map json) {
+  Network.fromJson(core.Map json) {
     if (json.containsKey("IPv4Range")) {
       IPv4Range = json["IPv4Range"];
     }
@@ -1642,8 +1642,8 @@ class Network {
   }
 
   /** Create JSON Object for Network */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (IPv4Range != null) {
       output["IPv4Range"] = IPv4Range;
@@ -1674,7 +1674,7 @@ class Network {
   }
 
   /** Return String representation of Network */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1682,22 +1682,22 @@ class Network {
 class NetworkInterface {
 
   /** Array of configurations for this interface. This specifies how this interface is configured to interact with other network services, such as connecting to the internet. Currently, ONE_TO_ONE_NAT is the only access config supported. If there are no accessConfigs specified, then this instance will have no external internet access. */
-  List<AccessConfig> accessConfigs;
+  core.List<AccessConfig> accessConfigs;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource, determined by the server; for network devices, these are e.g. eth0, eth1, etc. (output only). */
-  String name;
+  core.String name;
 
   /** URL of the network resource attached to this interface. */
-  String network;
+  core.String network;
 
   /** An optional IPV4 internal network address to assign to this instance. If not specified, one will be assigned from the available range. */
-  String networkIP;
+  core.String networkIP;
 
   /** Create new NetworkInterface from JSON data */
-  NetworkInterface.fromJson(Map json) {
+  NetworkInterface.fromJson(core.Map json) {
     if (json.containsKey("accessConfigs")) {
       accessConfigs = [];
       json["accessConfigs"].forEach((item) {
@@ -1719,11 +1719,11 @@ class NetworkInterface {
   }
 
   /** Create JSON Object for NetworkInterface */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (accessConfigs != null) {
-      output["accessConfigs"] = new List();
+      output["accessConfigs"] = new core.List();
       accessConfigs.forEach((item) {
         output["accessConfigs"].add(item.toJson());
       });
@@ -1745,7 +1745,7 @@ class NetworkInterface {
   }
 
   /** Return String representation of NetworkInterface */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1753,22 +1753,22 @@ class NetworkInterface {
 class NetworkList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The network resources. */
-  List<Network> items;
+  core.List<Network> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new NetworkList from JSON data */
-  NetworkList.fromJson(Map json) {
+  NetworkList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -1790,14 +1790,14 @@ class NetworkList {
   }
 
   /** Create JSON Object for NetworkList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -1816,7 +1816,7 @@ class NetworkList {
   }
 
   /** Return String representation of NetworkList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -1824,64 +1824,64 @@ class NetworkList {
 class Operation {
 
   /** An optional identifier specified by the client when the mutation was initiated. Must be unique for all operation resources in the project (output only). */
-  String clientOperationId;
+  core.String clientOperationId;
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** The time that this operation was completed. This is in RFC 3339 format (output only). */
-  String endTime;
+  core.String endTime;
 
   /** If errors occurred during processing of this operation, this field will be populated (output only). */
   OperationError error;
 
   /** If operation fails, the HTTP error message returned, e.g. NOT FOUND. (output only). */
-  String httpErrorMessage;
+  core.String httpErrorMessage;
 
   /** If operation fails, the HTTP error status code returned, e.g. 404. (output only). */
-  int httpErrorStatusCode;
+  core.int httpErrorStatusCode;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The time that this operation was requested. This is in RFC 3339 format (output only). */
-  String insertTime;
+  core.String insertTime;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource. */
-  String name;
+  core.String name;
 
   /** Type of the operation. Examples include "insert", "update", and "delete" (output only). */
-  String operationType;
+  core.String operationType;
 
   /** An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess at when the operation will be complete. This number should be monotonically increasing as the operation progresses (output only). */
-  int progress;
+  core.int progress;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** The time that this operation was started by the server. This is in RFC 3339 format (output only). */
-  String startTime;
+  core.String startTime;
 
   /** Status of the operation. Can be one of the following: "PENDING", "RUNNING", or "DONE" (output only). */
-  String status;
+  core.String status;
 
   /** An optional textual description of the current status of the operation (output only). */
-  String statusMessage;
+  core.String statusMessage;
 
   /** Unique target id which identifies a particular incarnation of the target (output only). */
-  String targetId;
+  core.String targetId;
 
   /** URL of the resource the operation is mutating (output only). */
-  String targetLink;
+  core.String targetLink;
 
   /** User who requested the operation, for example "user@example.com" (output only). */
-  String user;
+  core.String user;
 
   /** Create new Operation from JSON data */
-  Operation.fromJson(Map json) {
+  Operation.fromJson(core.Map json) {
     if (json.containsKey("clientOperationId")) {
       clientOperationId = json["clientOperationId"];
     }
@@ -1942,8 +1942,8 @@ class Operation {
   }
 
   /** Create JSON Object for Operation */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (clientOperationId != null) {
       output["clientOperationId"] = clientOperationId;
@@ -2007,7 +2007,7 @@ class Operation {
   }
 
   /** Return String representation of Operation */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2015,10 +2015,10 @@ class Operation {
 class OperationError {
 
   /** The array of errors encountered while processing this operation. */
-  List<OperationErrorErrors> errors;
+  core.List<OperationErrorErrors> errors;
 
   /** Create new OperationError from JSON data */
-  OperationError.fromJson(Map json) {
+  OperationError.fromJson(core.Map json) {
     if (json.containsKey("errors")) {
       errors = [];
       json["errors"].forEach((item) {
@@ -2028,11 +2028,11 @@ class OperationError {
   }
 
   /** Create JSON Object for OperationError */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (errors != null) {
-      output["errors"] = new List();
+      output["errors"] = new core.List();
       errors.forEach((item) {
         output["errors"].add(item.toJson());
       });
@@ -2042,23 +2042,23 @@ class OperationError {
   }
 
   /** Return String representation of OperationError */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class OperationErrorErrors {
 
   /** The error type identifier for this error. */
-  String code;
+  core.String code;
 
   /** Indicates the field in the request which caused the error. This property is optional. */
-  String location;
+  core.String location;
 
   /** An optional, human-readable error message. */
-  String message;
+  core.String message;
 
   /** Create new OperationErrorErrors from JSON data */
-  OperationErrorErrors.fromJson(Map json) {
+  OperationErrorErrors.fromJson(core.Map json) {
     if (json.containsKey("code")) {
       code = json["code"];
     }
@@ -2071,8 +2071,8 @@ class OperationErrorErrors {
   }
 
   /** Create JSON Object for OperationErrorErrors */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (code != null) {
       output["code"] = code;
@@ -2088,7 +2088,7 @@ class OperationErrorErrors {
   }
 
   /** Return String representation of OperationErrorErrors */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2096,22 +2096,22 @@ class OperationErrorErrors {
 class OperationList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The operation resources. */
-  List<Operation> items;
+  core.List<Operation> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new OperationList from JSON data */
-  OperationList.fromJson(Map json) {
+  OperationList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -2133,14 +2133,14 @@ class OperationList {
   }
 
   /** Create JSON Object for OperationList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -2159,7 +2159,7 @@ class OperationList {
   }
 
   /** Return String representation of OperationList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2170,31 +2170,31 @@ class Project {
   Metadata commonInstanceMetadata;
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource. */
-  String description;
+  core.String description;
 
   /** Internet available IP addresses available for use in this project. */
-  List<String> externalIpAddresses;
+  core.List<core.String> externalIpAddresses;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource. */
-  String name;
+  core.String name;
 
   /** Quotas assigned to this project. */
-  List<ProjectQuotas> quotas;
+  core.List<ProjectQuotas> quotas;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new Project from JSON data */
-  Project.fromJson(Map json) {
+  Project.fromJson(core.Map json) {
     if (json.containsKey("commonInstanceMetadata")) {
       commonInstanceMetadata = new Metadata.fromJson(json["commonInstanceMetadata"]);
     }
@@ -2231,8 +2231,8 @@ class Project {
   }
 
   /** Create JSON Object for Project */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (commonInstanceMetadata != null) {
       output["commonInstanceMetadata"] = commonInstanceMetadata.toJson();
@@ -2244,7 +2244,7 @@ class Project {
       output["description"] = description;
     }
     if (externalIpAddresses != null) {
-      output["externalIpAddresses"] = new List();
+      output["externalIpAddresses"] = new core.List();
       externalIpAddresses.forEach((item) {
         output["externalIpAddresses"].add(item);
       });
@@ -2259,7 +2259,7 @@ class Project {
       output["name"] = name;
     }
     if (quotas != null) {
-      output["quotas"] = new List();
+      output["quotas"] = new core.List();
       quotas.forEach((item) {
         output["quotas"].add(item.toJson());
       });
@@ -2272,23 +2272,23 @@ class Project {
   }
 
   /** Return String representation of Project */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ProjectQuotas {
 
   /** Quota limit for this metric. */
-  num limit;
+  core.num limit;
 
   /** Name of the quota metric. */
-  String metric;
+  core.String metric;
 
   /** Current usage of this metric. */
-  num usage;
+  core.num usage;
 
   /** Create new ProjectQuotas from JSON data */
-  ProjectQuotas.fromJson(Map json) {
+  ProjectQuotas.fromJson(core.Map json) {
     if (json.containsKey("limit")) {
       limit = json["limit"];
     }
@@ -2301,8 +2301,8 @@ class ProjectQuotas {
   }
 
   /** Create JSON Object for ProjectQuotas */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (limit != null) {
       output["limit"] = limit;
@@ -2318,7 +2318,7 @@ class ProjectQuotas {
   }
 
   /** Return String representation of ProjectQuotas */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2326,16 +2326,16 @@ class ProjectQuotas {
 class SerialPortOutput {
 
   /** The contents of the console output. */
-  String contents;
+  core.String contents;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Server defined URL for the resource. */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new SerialPortOutput from JSON data */
-  SerialPortOutput.fromJson(Map json) {
+  SerialPortOutput.fromJson(core.Map json) {
     if (json.containsKey("contents")) {
       contents = json["contents"];
     }
@@ -2348,8 +2348,8 @@ class SerialPortOutput {
   }
 
   /** Create JSON Object for SerialPortOutput */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (contents != null) {
       output["contents"] = contents;
@@ -2365,7 +2365,7 @@ class SerialPortOutput {
   }
 
   /** Return String representation of SerialPortOutput */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2373,16 +2373,16 @@ class SerialPortOutput {
 class ServiceAccount {
 
   /** Email address of the service account. */
-  String email;
+  core.String email;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** The list of scopes to be made available for this service account. */
-  List<String> scopes;
+  core.List<core.String> scopes;
 
   /** Create new ServiceAccount from JSON data */
-  ServiceAccount.fromJson(Map json) {
+  ServiceAccount.fromJson(core.Map json) {
     if (json.containsKey("email")) {
       email = json["email"];
     }
@@ -2398,8 +2398,8 @@ class ServiceAccount {
   }
 
   /** Create JSON Object for ServiceAccount */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (email != null) {
       output["email"] = email;
@@ -2408,7 +2408,7 @@ class ServiceAccount {
       output["kind"] = kind;
     }
     if (scopes != null) {
-      output["scopes"] = new List();
+      output["scopes"] = new core.List();
       scopes.forEach((item) {
         output["scopes"].add(item);
       });
@@ -2418,7 +2418,7 @@ class ServiceAccount {
   }
 
   /** Return String representation of ServiceAccount */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2426,37 +2426,37 @@ class ServiceAccount {
 class Snapshot {
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** An optional textual description of the resource; provided by the client when the resource is created. */
-  String description;
+  core.String description;
 
   /** Size of the persistent disk snapshot, specified in GB (output only). */
-  String diskSizeGb;
+  core.String diskSizeGb;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. */
-  String name;
+  core.String name;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** The source disk used to create this snapshot. Once the source disk has been deleted from the system, this field will be cleared, and will not be set even if a disk with the same name has been re-created. */
-  String sourceDisk;
+  core.String sourceDisk;
 
   /** The 'id' value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name. */
-  String sourceDiskId;
+  core.String sourceDiskId;
 
   /** The status of the persistent disk snapshot (output only). */
-  String status;
+  core.String status;
 
   /** Create new Snapshot from JSON data */
-  Snapshot.fromJson(Map json) {
+  Snapshot.fromJson(core.Map json) {
     if (json.containsKey("creationTimestamp")) {
       creationTimestamp = json["creationTimestamp"];
     }
@@ -2490,8 +2490,8 @@ class Snapshot {
   }
 
   /** Create JSON Object for Snapshot */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (creationTimestamp != null) {
       output["creationTimestamp"] = creationTimestamp;
@@ -2528,7 +2528,7 @@ class Snapshot {
   }
 
   /** Return String representation of Snapshot */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2536,22 +2536,22 @@ class Snapshot {
 class SnapshotList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The persistent snapshot resources. */
-  List<Snapshot> items;
+  core.List<Snapshot> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new SnapshotList from JSON data */
-  SnapshotList.fromJson(Map json) {
+  SnapshotList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -2573,14 +2573,14 @@ class SnapshotList {
   }
 
   /** Create JSON Object for SnapshotList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -2599,7 +2599,7 @@ class SnapshotList {
   }
 
   /** Return String representation of SnapshotList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2607,34 +2607,34 @@ class SnapshotList {
 class Zone {
 
   /** The machine types that can be used in this zone (output only). */
-  List<String> availableMachineType;
+  core.List<core.String> availableMachineType;
 
   /** Creation timestamp in RFC3339 text format (output only). */
-  String creationTimestamp;
+  core.String creationTimestamp;
 
   /** Textual description of the resource. */
-  String description;
+  core.String description;
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** Type of the resource. */
-  String kind;
+  core.String kind;
 
   /** Scheduled maintenance windows for the zone. When the zone is in a maintenance window, all resources which reside in the zone will be unavailable. */
-  List<ZoneMaintenanceWindows> maintenanceWindows;
+  core.List<ZoneMaintenanceWindows> maintenanceWindows;
 
   /** Name of the resource. */
-  String name;
+  core.String name;
 
   /** Server defined URL for the resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Status of the zone. "UP" or "DOWN". */
-  String status;
+  core.String status;
 
   /** Create new Zone from JSON data */
-  Zone.fromJson(Map json) {
+  Zone.fromJson(core.Map json) {
     if (json.containsKey("availableMachineType")) {
       availableMachineType = [];
       json["availableMachineType"].forEach((item) {
@@ -2671,11 +2671,11 @@ class Zone {
   }
 
   /** Create JSON Object for Zone */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (availableMachineType != null) {
-      output["availableMachineType"] = new List();
+      output["availableMachineType"] = new core.List();
       availableMachineType.forEach((item) {
         output["availableMachineType"].add(item);
       });
@@ -2693,7 +2693,7 @@ class Zone {
       output["kind"] = kind;
     }
     if (maintenanceWindows != null) {
-      output["maintenanceWindows"] = new List();
+      output["maintenanceWindows"] = new core.List();
       maintenanceWindows.forEach((item) {
         output["maintenanceWindows"].add(item.toJson());
       });
@@ -2712,26 +2712,26 @@ class Zone {
   }
 
   /** Return String representation of Zone */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class ZoneMaintenanceWindows {
 
   /** Begin time of the maintenance window, in RFC 3339 format. */
-  String beginTime;
+  core.String beginTime;
 
   /** Textual description of the maintenance window. */
-  String description;
+  core.String description;
 
   /** End time of the maintenance window, in RFC 3339 format. */
-  String endTime;
+  core.String endTime;
 
   /** Name of the maintenance window. */
-  String name;
+  core.String name;
 
   /** Create new ZoneMaintenanceWindows from JSON data */
-  ZoneMaintenanceWindows.fromJson(Map json) {
+  ZoneMaintenanceWindows.fromJson(core.Map json) {
     if (json.containsKey("beginTime")) {
       beginTime = json["beginTime"];
     }
@@ -2747,8 +2747,8 @@ class ZoneMaintenanceWindows {
   }
 
   /** Create JSON Object for ZoneMaintenanceWindows */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (beginTime != null) {
       output["beginTime"] = beginTime;
@@ -2767,7 +2767,7 @@ class ZoneMaintenanceWindows {
   }
 
   /** Return String representation of ZoneMaintenanceWindows */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
@@ -2775,22 +2775,22 @@ class ZoneMaintenanceWindows {
 class ZoneList {
 
   /** Unique identifier for the resource; defined by the server (output only). */
-  String id;
+  core.String id;
 
   /** The zone resources. */
-  List<Zone> items;
+  core.List<Zone> items;
 
   /** Type of resource. */
-  String kind;
+  core.String kind;
 
   /** A token used to continue a truncated list request (output only). */
-  String nextPageToken;
+  core.String nextPageToken;
 
   /** Server defined URL for this resource (output only). */
-  String selfLink;
+  core.String selfLink;
 
   /** Create new ZoneList from JSON data */
-  ZoneList.fromJson(Map json) {
+  ZoneList.fromJson(core.Map json) {
     if (json.containsKey("id")) {
       id = json["id"];
     }
@@ -2812,14 +2812,14 @@ class ZoneList {
   }
 
   /** Create JSON Object for ZoneList */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (id != null) {
       output["id"] = id;
     }
     if (items != null) {
-      output["items"] = new List();
+      output["items"] = new core.List();
       items.forEach((item) {
         output["items"].add(item.toJson());
       });
@@ -2838,7 +2838,7 @@ class ZoneList {
   }
 
   /** Return String representation of ZoneList */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
