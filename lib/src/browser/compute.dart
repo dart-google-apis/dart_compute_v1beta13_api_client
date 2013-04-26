@@ -4,28 +4,28 @@ part of compute_v1beta13_api_browser;
 /** API for the Google Compute Engine service. */
 class Compute extends BrowserClient {
 
-  DisksResource _disks;
-  DisksResource get disks => _disks;
-  FirewallsResource _firewalls;
-  FirewallsResource get firewalls => _firewalls;
-  ImagesResource _images;
-  ImagesResource get images => _images;
-  InstancesResource _instances;
-  InstancesResource get instances => _instances;
-  KernelsResource _kernels;
-  KernelsResource get kernels => _kernels;
-  MachineTypesResource _machineTypes;
-  MachineTypesResource get machineTypes => _machineTypes;
-  NetworksResource _networks;
-  NetworksResource get networks => _networks;
-  OperationsResource _operations;
-  OperationsResource get operations => _operations;
-  ProjectsResource _projects;
-  ProjectsResource get projects => _projects;
-  SnapshotsResource _snapshots;
-  SnapshotsResource get snapshots => _snapshots;
-  ZonesResource _zones;
-  ZonesResource get zones => _zones;
+  DisksResource_ _disks;
+  DisksResource_ get disks => _disks;
+  FirewallsResource_ _firewalls;
+  FirewallsResource_ get firewalls => _firewalls;
+  ImagesResource_ _images;
+  ImagesResource_ get images => _images;
+  InstancesResource_ _instances;
+  InstancesResource_ get instances => _instances;
+  KernelsResource_ _kernels;
+  KernelsResource_ get kernels => _kernels;
+  MachineTypesResource_ _machineTypes;
+  MachineTypesResource_ get machineTypes => _machineTypes;
+  NetworksResource_ _networks;
+  NetworksResource_ get networks => _networks;
+  OperationsResource_ _operations;
+  OperationsResource_ get operations => _operations;
+  ProjectsResource_ _projects;
+  ProjectsResource_ get projects => _projects;
+  SnapshotsResource_ _snapshots;
+  SnapshotsResource_ get snapshots => _snapshots;
+  ZonesResource_ _zones;
+  ZonesResource_ get zones => _zones;
 
   /** OAuth Scope2: View and manage your Google Compute Engine resources */
   static const core.String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
@@ -88,16 +88,16 @@ class Compute extends BrowserClient {
   Compute([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/compute/v1beta13/projects/";
     rootUrl = "https://www.googleapis.com:443/";
-    _disks = new DisksResource(this);
-    _firewalls = new FirewallsResource(this);
-    _images = new ImagesResource(this);
-    _instances = new InstancesResource(this);
-    _kernels = new KernelsResource(this);
-    _machineTypes = new MachineTypesResource(this);
-    _networks = new NetworksResource(this);
-    _operations = new OperationsResource(this);
-    _projects = new ProjectsResource(this);
-    _snapshots = new SnapshotsResource(this);
-    _zones = new ZonesResource(this);
+    _disks = new DisksResource_(this);
+    _firewalls = new FirewallsResource_(this);
+    _images = new ImagesResource_(this);
+    _instances = new InstancesResource_(this);
+    _kernels = new KernelsResource_(this);
+    _machineTypes = new MachineTypesResource_(this);
+    _networks = new NetworksResource_(this);
+    _operations = new OperationsResource_(this);
+    _projects = new ProjectsResource_(this);
+    _snapshots = new SnapshotsResource_(this);
+    _zones = new ZonesResource_(this);
   }
 }
