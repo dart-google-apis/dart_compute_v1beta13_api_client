@@ -87,7 +87,7 @@ class Compute extends ConsoleClient {
 
   Compute([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/compute/v1beta13/projects/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _disks = new DisksResource_(this);
     _firewalls = new FirewallsResource_(this);
     _images = new ImagesResource_(this);

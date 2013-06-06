@@ -164,7 +164,7 @@ class Disk {
   core.String selfLink;
 
   /** Size of the persistent disk, specified in GB. */
-  core.String sizeGb;
+  core.int sizeGb;
 
   /** The source snapshot used to create this disk. Once the source snapshot has been deleted from the system, this field will be cleared, and will not be set even if a snapshot with the same name has been re-created. */
   core.String sourceSnapshot;
@@ -1288,7 +1288,7 @@ class MachineType {
   core.int maximumPersistentDisks;
 
   /** Maximum total persistent disks size (GB) allowed. */
-  core.String maximumPersistentDisksSizeGb;
+  core.int maximumPersistentDisksSizeGb;
 
   /** Physical memory assigned to the instance, defined in MB. */
   core.int memoryMb;
@@ -2432,7 +2432,7 @@ class Snapshot {
   core.String description;
 
   /** Size of the persistent disk snapshot, specified in GB (output only). */
-  core.String diskSizeGb;
+  core.int diskSizeGb;
 
   /** Unique identifier for the resource; defined by the server (output only). */
   core.String id;
